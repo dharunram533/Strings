@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main()
+{
+    char first[100], last[100];
+    int i, j;
+    printf("Enter first name: ");
+    fgets(first, sizeof(first), stdin);
+    for (i = 0; first[i] != '\0'; i++)
+    {
+        if (first[i] == '\n')
+        {
+            first[i] = ' ';
+            break;
+        }
+    }
+    printf("Enter last name: ");
+    fgets(last, sizeof(last), stdin);
+    for (j = 0; last[j] != '\0'; j++)
+    {
+        first[++i] = last[j];
+    }
+    printf("Full Name: %s", first);
+    return 0;
+}
